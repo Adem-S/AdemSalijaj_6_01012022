@@ -6,7 +6,8 @@ function mediaFactory(data) {
     if (type == "image") {
       element = `<img src=assets/media/${data.photographerId}/${data.image} alt="${data.title}" data-id=${data.id}></img>`;
     } else if (type == "video") {
-      element = `<video src=assets/media/${data.photographerId}/${data.video} alt="${data.title}" data-id=${data.id}></video>`;
+      element = `<video src=assets/media/${data.photographerId}/${data.video}#t=0.1 alt="${data.title}" data-id=${data.id} preload="metadata"></video>`;
+      //#t=0.1 et preload="metadata" pour que l'image de la video s'affiche sur safari
     }
 
     const li = `
