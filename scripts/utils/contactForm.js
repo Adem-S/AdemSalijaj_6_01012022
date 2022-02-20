@@ -28,19 +28,19 @@ form.addEventListener("submit", function (e) {
   closeModal();
 });
 
-document.querySelector(".modal").addEventListener(
+/* document.querySelector(".modal").addEventListener(
   "blur",
   (event) => {
     if (event.target == closeBtnForm) {
       console.log(event.target);
 
-      /* if (document.activeElement.id !== "firstName") {
+      if (document.activeElement.id !== "firstName") {
         console.log(document.activeElement);
-        /*    closeBtnForm.focus(); */
+        closeBtnForm.focus();
     }
   },
   true
-);
+); */
 
 /* submitBtnForm.addEventListener("blur", () => {
   console.log(document.hasFocus);

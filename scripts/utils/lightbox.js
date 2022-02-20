@@ -22,6 +22,8 @@ function setMediaLightbox(id) {
     mediaClone.setAttribute("controls", true);
   }
   lightboxMedia.innerHTML = "";
+  mediaClone.setAttribute("tabindex", "0");
+
   lightboxMedia.appendChild(mediaClone);
 }
 

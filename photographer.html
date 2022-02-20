@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html>
+<html lang="fr">
   <head>
     <link href="css/style.css" rel="stylesheet" type="text/css" />
     <meta charset="utf-8" />
@@ -23,10 +23,10 @@
     <main class="profil" tabindex="-1">
       <section aria-label="presentation" class="profil__header">
         <div class="profil__presentation">
-          <h1 id="profilName" class="name-title"></h1>
+          <h1 id="profilName" class="name-title">Name</h1>
           <div class="profil__info">
-            <h2 id="profilLocation"></h2>
-            <p id="profilTagline"></p>
+            <h2 id="profilLocation">Location</h2>
+            <p id="profilTagline">Tagline</p>
           </div>
         </div>
         <div class="profil__contact">
@@ -39,10 +39,10 @@
           </button>
         </div>
         <div class="profil__image">
-          <img id="profilImage" class="circle-image" alt="" />
+          <img src="#" id="profilImage" class="circle-image" alt="" />
         </div>
       </section>
-      <section>
+      <div>
         <div class="dropdown">
           <label for="filter" class="dropdown-span">Trier par</label>
           <div>
@@ -83,29 +83,30 @@
           </div>
         </div>
         <ul id="profil__media"></ul>
-      </section>
+      </div>
 
-      <section class="photographer-info">
+      <div class="photographer-info">
         <div>
           <p id="photographer-all-likes"></p>
           <img src="./assets/icons/heart.svg" alt="coeur" />
         </div>
         <p id="photographer-price-day"></p>
-      </section>
+      </div>
     </main>
 
-    <div class="modal" role="contact-modal" aria-describedby="modalTitle">
+    <div class="modal" aria-describedby="modalTitle">
       <header>
         <h1 id="modalTitle">Contactez-moi</h1>
         <button class="contact_close_button">
           <img
             src="assets/icons/close.svg"
             onclick="closeModal()"
+            alt="croix"
             aria-label="Bouton pour fermer modal"
           />
         </button>
       </header>
-      <form name="contact" role="contact">
+      <form name="contact">
         <div>
           <label for="firstName">Prénom</label>
           <input type="text" name="firstName" id="firstName" />
@@ -128,7 +129,7 @@
       </form>
     </div>
 
-    <div id="lightbox_media" role="media">
+    <div id="lightbox_media">
       <button
         id="close-lightbox_media"
         style="background: url(assets/icons/close.svg)"
@@ -142,7 +143,7 @@
         class="link-previous-media"
         onclick="changeMediaLightBox(-1)"
       >
-        <img src="./assets/icons/arrow_icon.svg" />
+        <img src="./assets/icons/arrow_icon.svg" alt="" />
       </a>
       <a
         href="#"
@@ -150,7 +151,7 @@
         class="link-next-media"
         onclick="changeMediaLightBox(1)"
       >
-        <img src="./assets/icons/arrow_icon.svg" />
+        <img src="./assets/icons/arrow_icon.svg" alt="" />
       </a>
     </div>
     <script src="/scripts/utils/contactForm.js"></script>
