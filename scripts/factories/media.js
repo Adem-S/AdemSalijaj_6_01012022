@@ -19,7 +19,7 @@ function mediaFactory(data) {
                   <p>${data.title}</p>
                   <div class="like" onclick="likeEvent(this)" >
                     <p>${data.likes}</p>
-                    <img src="assets/icons/heart.svg" alt="coeur"/>
+                    <img src="assets/icons/heart.svg" alt="coeur"/>   
                   </div>
                 </div>
               </li>

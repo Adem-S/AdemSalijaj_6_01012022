@@ -39,3 +39,9 @@ dropdownOptions.forEach((option) => {
     }
   });
 });
+
+setFocusOnlyInContainer(
+  ".dropdown-list",
+  ".dropdown-list li:first-child",
+  ".dropdown-list li:last-child"
+);

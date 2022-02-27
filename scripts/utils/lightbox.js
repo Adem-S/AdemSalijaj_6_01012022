@@ -54,3 +54,9 @@ document.addEventListener("keydown", (event) => {
     }
   }
 });
+
+setFocusOnlyInContainer(
+  "#lightbox_media",
+  "#close-lightbox_media",
+  ".link-next-media"
+);
