@@ -2,16 +2,21 @@
 function setFocusOnlyInContainer(
   classContainer,
   classFirstElement,
-  classLastElement
+  classLastElement,
+  closeContainer = null
 ) {
-  let firstElement = document.querySelector(classFirstElement);
-  let lastElement = document.querySelector(classLastElement);
   document
     .querySelector(classContainer)
     .addEventListener("keydown", (event) => {
-      let isTab = event.key == "Tab" || event.keyCode == 9;
+      //Si element change de place dans le container
+      let firstElement = document.querySelector(classFirstElement);
+      let lastElement = document.querySelector(classLastElement);
 
-      if (!isTab) {
+      let isTab = event.key == "Tab" || event.keyCode == 9;
+      let isEscape = event.key == "Escape" || event.keyCode == 27;
+
+      if (!isTab || isEscape) {
+        if (closeContainer && isEscape) closeContainer();
         return;
       }
       if (event.shiftKey) {

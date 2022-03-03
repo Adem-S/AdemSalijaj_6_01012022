@@ -1,6 +1,6 @@
-let dropdownToggle = document.querySelector(".dropdown-toggle");
-let dropdownList = document.querySelector(".dropdown-list");
-let dropdownOptions = document.querySelectorAll(".dropdown-list li");
+const dropdownToggle = document.querySelector(".dropdown-toggle");
+const dropdownList = document.querySelector(".dropdown-list");
+const dropdownOptions = document.querySelectorAll(".dropdown-list li");
 
 //Evenement click du select
 dropdownToggle.addEventListener("click", () => {

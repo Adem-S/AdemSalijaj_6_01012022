@@ -1,16 +1,26 @@
+const modal = document.querySelector(".modal");
 const form = document.forms["contact"];
 const closeBtnForm = document.querySelector(".contact_close_button");
 const submitBtn = document.querySelector("button[type='submit']");
 
 function displayModal() {
-  const modal = document.querySelector(".modal");
   modal.style.display = "flex";
   closeBtnForm.focus();
 }
 
+function getElementsForm(form) {
+  let names = form.querySelectorAll("input[type='text']");
+  let email = form.querySelector("input[type='email']");
+  let message = form.querySelector("textarea");
+  return [names[0], names[1], email, message];
+}
+
 function closeModal() {
-  const modal = document.querySelector(".modal");
   modal.style.display = "none";
+
+  //reset form
+  let elements = getElementsForm(form);
+  elements.forEach((element) => (element.value = ""));
 }
 
 // Evenement validation du formulaire
@@ -18,14 +28,9 @@ form.addEventListener("submit", function (e) {
   e.preventDefault();
   e.stopPropagation();
 
-  let names = this.querySelectorAll("input[type='text']");
-  let email = this.querySelector("input[type='email']");
-  let message = this.querySelector("textarea");
+  let elements = getElementsForm(this);
+  elements.forEach((element) => console.log(element.value));
 
-  console.log(names[0].value);
-  console.log(names[1].value);
-  console.log(email.value);
-  console.log(message.value);
   if (document.activeElement == submitBtn) {
     closeModal();
   }
@@ -34,5 +39,6 @@ form.addEventListener("submit", function (e) {
 setFocusOnlyInContainer(
   ".modal",
   ".contact_close_button",
-  "button[type='submit']"
+  "button[type='submit']",
+  closeModal
 );
